@@ -17,6 +17,29 @@ function TooltipMarker(position, tooltipText) {
         tooltip.style.display = 'none';
     };
     node.onclick = function () {
+        $('#title').text(tooltipText)
+        var busText = '';
+        if (tooltipText === '산격시장') {
+            $('#address').val('대구 북구 대동로1길 34')
+            busText = '[간선] 101|304|323|623|706|836\n'
+            busText += '[지선] 북구1|북구2\n'
+            busText += '[순환] 순환3'
+            $('#bus').text(busText)
+        } else if (tooltipText === '공항시장') {
+            $('#address').val('대구 동구 지저동 671-6')
+            busText = '[간선] 101-1|401\n'
+            busText += '[지선] 팔공2\n'
+            $('#bus').text(busText)
+        } else if (tooltipText === '평화시장') {
+            $('#address').val('대구 동구 아양로9길 16-10')
+            busText = '[간선] 618|708|808|980\n'
+            busText += '[지선] 동구3\n'
+            busText += '[급행] 급행1\n'
+            $('#bus').text(busText)
+        } else {
+            $('#address').val('대구광역시')
+            $('#bus').text(busText)
+        }
         alertInfo('전통시장에 도착하였습니다!<br>10 Point를 적립하였습니다.')
     }
 }
@@ -350,9 +373,9 @@ var dkpos2 = new kakao.maps.LatLng(35.8966135928653, 128.638075545279);
 var dkpos3 = new kakao.maps.LatLng(35.8894311265833, 128.570104489868);
 
 // 툴팁을 노출하는 마커를 생성합니다.
-var marker1 = new TooltipMarker(dkpos1, '');
-var marker2 = new TooltipMarker(dkpos2, '');
-var marker3 = new TooltipMarker(dkpos3, '');
+var marker1 = new TooltipMarker(dkpos1, '산격시장');
+var marker2 = new TooltipMarker(dkpos2, '공항시장');
+var marker3 = new TooltipMarker(dkpos3, '평화시장');
 
 marker1.setMap(map);
 marker2.setMap(map);
@@ -386,11 +409,11 @@ function currentLocation() {
         });
     } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
 
-        var locPosition = new kakao.maps.LatLng(37.4812845080678, 126.952713197762),
+        var locPosition = new kakao.maps.LatLng(35.9070695926156, 128.613073860533),
             message = '현재 위치를 알 수 없어 기본 위치로 이동합니다.'
 
-        currentLatLon['lat'] = 33.450701
-        currentLatLon['lon'] = 126.570667
+        currentLatLon['lat'] = 35.9070695926156
+        currentLatLon['lon'] = 128.613073860533
 
         displayMarker(locPosition, message);
     }
