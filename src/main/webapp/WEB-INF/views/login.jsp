@@ -12,47 +12,10 @@
 <body>
 <div class="container">
     <span class="big-circle"></span>
-    <img src="img/shape.png" class="square" alt=""/>
+    <img src="../../../resources/static/images/shape.png" class="square" alt=""/>
     <div class="form">
         <div class="contact-info">
-            <h3 class="title">Let's get in touch</h3>
-            <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                dolorum adipisci recusandae praesentium dicta!
-            </p>
-
-            <div class="info">
-                <div class="information">
-                    <img src="../../../resources/static/images/location.png" class="icon" alt=""/>
-                    <p>92 Cherry Drive Uniondale, NY 11553</p>
-                </div>
-                <div class="information">
-                    <img src="../../../resources/static/images/email.png" class="icon" alt=""/>
-                    <p>lorem@ipsum.com</p>
-                </div>
-                <div class="information">
-                    <img src="../../../resources/static/images/phone.png" class="icon" alt=""/>
-                    <p>123-456-789</p>
-                </div>
-            </div>
-
-            <div class="social-media">
-                <p>Connect with us :</p>
-                <div class="social-icons">
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
+            <img src="../../../resources/static/images/login_market.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
 
         <div class="contact-form">
@@ -60,14 +23,14 @@
             <span class="circle two"></span>
 
             <form action="/map" autocomplete="off" onsubmit="return false;">
-                <h3 class="title">Contact us</h3>
+                <h3 class="title">기기선택</h3>
                 <div class="input-container">
-                    <select>
+                    <select style="width: 100%;">
                         <option vlaue="did:mitum:minic:AqiZvAJ3V67nowQhemC3ZtLmzpiJYP1diqjV8XmhBs9mmca">DID1</option>
                         <option vlaue="did:mitum:minic:FQnRKrDNGovpDYyd3jyPW4igEhvsCe4P8ob6yWE6ZVEUmca">DID2</option>
                     </select>
                 </div>
-                <input type="submit" value="로그인" class="btn"/>
+                <input type="submit" value="로그인" class="btn" style="width: 100%;"/>
             </form>
         </div>
     </div>
