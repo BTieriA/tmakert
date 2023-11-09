@@ -1,3 +1,8 @@
+var visitCnt1 = 0;
+var visitCnt2 = 0;
+var visitCnt3 = 0;
+var mintMsg;
+
 function TooltipMarker(position, tooltipText) {
     this.position = position;
     var node = this.node = document.createElement('div');
@@ -20,17 +25,41 @@ function TooltipMarker(position, tooltipText) {
         $('#title').text(tooltipText)
         var busText = '';
         if (tooltipText === '산격시장') {
+            if(visitCnt1 == 0){
+                mintMsg = "산격시장에 최초로 도착하였습니다!<br>100 Point를 적립하였습니다.";
+                callMintToken(100);
+            }else{
+                mintMsg = "산격시장에 재방문하였습니다!<br>10 Point를 적립하였습니다.";
+                callMintToken(10);
+            }
+            visitCnt1++;
             $('#address').val('대구 북구 대동로1길 34')
             busText = '[간선] 101 | 304 | 323 | 623 | 706 | 836\n'
             busText += '[지선] 북구1 | 북구2\n'
             busText += '[순환] 순환3'
             $('#bus').text(busText)
         } else if (tooltipText === '공항시장') {
+            if(visitCnt2 == 0){
+                mintMsg = "공항시장에 최초로 도착하였습니다!<br>100 Point를 적립하였습니다.";
+                callMintToken(100);
+            }else{
+                mintMsg = "공항시장에 재방문하였습니다!<br>10 Point를 적립하였습니다.";
+                callMintToken(10);
+            }
+            visitCnt2++;
             $('#address').val('대구 동구 지저동 671-6')
             busText = '[간선] 101-1 | 401\n'
             busText += '[지선] 팔공2\n'
             $('#bus').text(busText)
         } else if (tooltipText === '평화시장') {
+            if(visitCnt3 == 0){
+                mintMsg = "평화시장에 최초로 도착하였습니다!<br>100 Point를 적립하였습니다.";
+                callMintToken(100);
+            }else{
+                mintMsg = "평화시장에 재방문하였습니다!<br>10 Point를 적립하였습니다.";
+                callMintToken(10);
+            }
+            visitCnt3++;
             $('#address').val('대구 동구 아양로9길 16-10')
             busText = '[간선] 618 | 708 | 808 | 980\n'
             busText += '[지선] 동구3\n'
@@ -40,7 +69,6 @@ function TooltipMarker(position, tooltipText) {
             $('#address').val('대구광역시')
             $('#bus').text(busText)
         }
-        alertInfo('전통시장에 도착하였습니다!<br>10 Point를 적립하였습니다.')
     }
 }
 
@@ -449,4 +477,31 @@ function displayMarker(locPosition, message) {
 
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);
+}
+
+let wAdd = "AqiZvAJ3V67nowQhemC3ZtLmzpiJYP1diqjV8XmhBs9mmca";
+
+function callMintToken(amount) {
+    tmarketApi.mintToken(wAdd, amount, "callMintTokenSucess");
+}
+
+function callMintTokenSucess(res) {
+    console.log(res);
+    alertInfo(mintMsg);
+    callTokenBalance();
+}
+
+function callTokenBalance() {
+    tmarketApi.callTokenBalance(wAdd, "callTokenBalanceSucess");
+}
+
+callTokenBalance();
+
+function callTokenBalanceSucess(res) {
+
+    if(res.status == "OOPS") {
+        $("input[name=coin]").val(0);
+    }else{
+        $("input[name=coin]").val(res.data.balance);
+    }
 }

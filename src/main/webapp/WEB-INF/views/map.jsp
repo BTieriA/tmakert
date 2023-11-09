@@ -61,15 +61,15 @@
                     <label for="">Bus</label>
                     <span>Bus</span>
                 </div>
-                <input type="submit" value="Send" class="btn"/>
             </form>
         </div>
     </div>
 </div>
 
 <script src="../../../resources/static/js/jquery-3.6.1.min.js"></script>
-<script src="../../../resources/static/js/map.js"></script>
 <script src="../../../resources/static/js/sweet.js"></script>
 <script src="../../../resources/static/js/sweetalert2.all.min.js"></script>
+<script src="../../../resources/static/js/tmatketApi.js"></script>
+<script src="../../../resources/static/js/map.js"></script>
 </body>
 </html>
