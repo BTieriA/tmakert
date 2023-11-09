@@ -1,1 +1,7 @@
-alertError('요청 처리에 실패했습니다.<br>관리자에게 문의하시기 바랍니다.');
+var dropdown = document.querySelector('.dropdown');
+var dropdownList = document.querySelector('.dropdown-list');
+
+dropdown.onclick = function openList(){
+    dropdown.classList.toggle('active');
+    dropdownList.classList.toggle('opened');
+}

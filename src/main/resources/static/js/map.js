@@ -21,18 +21,18 @@ function TooltipMarker(position, tooltipText) {
         var busText = '';
         if (tooltipText === '산격시장') {
             $('#address').val('대구 북구 대동로1길 34')
-            busText = '[간선] 101|304|323|623|706|836\n'
-            busText += '[지선] 북구1|북구2\n'
+            busText = '[간선] 101 | 304 | 323 | 623 | 706 | 836\n'
+            busText += '[지선] 북구1 | 북구2\n'
             busText += '[순환] 순환3'
             $('#bus').text(busText)
         } else if (tooltipText === '공항시장') {
             $('#address').val('대구 동구 지저동 671-6')
-            busText = '[간선] 101-1|401\n'
+            busText = '[간선] 101-1 | 401\n'
             busText += '[지선] 팔공2\n'
             $('#bus').text(busText)
         } else if (tooltipText === '평화시장') {
             $('#address').val('대구 동구 아양로9길 16-10')
-            busText = '[간선] 618|708|808|980\n'
+            busText = '[간선] 618 | 708 | 808 | 980\n'
             busText += '[지선] 동구3\n'
             busText += '[급행] 급행1\n'
             $('#bus').text(busText)
