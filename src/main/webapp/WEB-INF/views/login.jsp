@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -58,34 +59,21 @@
             <span class="circle one"></span>
             <span class="circle two"></span>
 
-            <form action="/" autocomplete="off">
+            <form action="/map" autocomplete="off" onsubmit="return false;">
                 <h3 class="title">Contact us</h3>
                 <div class="input-container">
-                    <input type="text" name="name" class="input"/>
-                    <label for="">Username</label>
-                    <span>Username</span>
+                    <select>
+                        <option vlaue="did:mitum:minic:AqiZvAJ3V67nowQhemC3ZtLmzpiJYP1diqjV8XmhBs9mmca">DID1</option>
+                        <option vlaue="did:mitum:minic:FQnRKrDNGovpDYyd3jyPW4igEhvsCe4P8ob6yWE6ZVEUmca">DID2</option>
+                    </select>
                 </div>
-                <div class="input-container">
-                    <input type="email" name="email" class="input"/>
-                    <label for="">Email</label>
-                    <span>Email</span>
-                </div>
-                <div class="input-container">
-                    <input type="tel" name="phone" class="input"/>
-                    <label for="">Phone</label>
-                    <span>Phone</span>
-                </div>
-                <div class="input-container textarea">
-                    <textarea name="message" class="input"></textarea>
-                    <label for="">Message</label>
-                    <span>Message</span>
-                </div>
-                <input type="submit" value="Send" class="btn"/>
+                <input type="submit" value="로그인" class="btn"/>
             </form>
         </div>
     </div>
 </div>
 
+<script src="../../../resources/static/js/jquery-3.6.1.min.js"></script>
 <script src="../../../resources/static/js/sweet.js"></script>
 <script src="../../../resources/static/js/sweetalert2.all.min.js"></script>
 <script src="../../../resources/static/js/login.js"></script>
